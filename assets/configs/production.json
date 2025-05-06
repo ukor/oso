@@ -1,0 +1,10 @@
+{
+  "name": "development | staging | production",
+  "appTitle": "Example",
+  "endpoint": {
+    "comment": "Points to production endpoint",
+    "api": "https://api-oso-prd.achota.com",
+    "socket": "https://socket-oso-prd.achota.com"
+  },
+  "comment": "other key can be added here, remember to account for it in the commons/dtos/flavour file"
+}

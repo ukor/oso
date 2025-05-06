@@ -1,0 +1,11 @@
+{
+  "name": "development",
+  "appTitle": "Oso",
+  "endpoint": {
+    "comment": "Points to development endpoint. ngrok or cloudflare tunnel can come in handy here",
+    "api": "",
+    "socket": "https://socket-dev.example.com"
+  },
+  "zAndroidKey": "",
+  "zIOSKey": ""
+}

@@ -1,0 +1,10 @@
+{
+  "name": "development | staging | production",
+  "appTitle": "Example",
+  "endpoint": {
+    "comment": "you can use ngrok to point this to your localhost",
+    "api": "https://api-oso-dev.achota.com",
+    "socket": "https://socket-oso-dev.achota.com"
+  },
+  "comment": "other key can be added here, remember to account for it in the commons/dtos/flavour file"
+}
