@@ -29,7 +29,6 @@ class OTextTheme {
     ),
   );
 
-
   static TextTheme darkTextTheme = GoogleFonts.poppinsTextTheme(
     TextTheme(
       displayLarge: TextStyle().copyWith(color: OAppColors.secondaryColorDark),
@@ -37,7 +36,9 @@ class OTextTheme {
       displaySmall: TextStyle().copyWith(color: OAppColors.secondaryColorDark),
 
       headlineLarge: TextStyle().copyWith(color: OAppColors.secondaryColorDark),
-      headlineMedium: TextStyle().copyWith(color: OAppColors.secondaryColorDark),
+      headlineMedium: TextStyle().copyWith(
+        color: OAppColors.secondaryColorDark,
+      ),
       headlineSmall: TextStyle().copyWith(color: OAppColors.secondaryColorDark),
 
       titleLarge: TextStyle().copyWith(color: OAppColors.secondaryColorDark),

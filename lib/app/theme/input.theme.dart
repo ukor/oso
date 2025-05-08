@@ -22,7 +22,7 @@ class OInputTheme {
       borderSide: BorderSide(color: OAppColors.secondaryColor, width: 1),
     ),
     focusedErrorBorder: inputBorder.copyWith(
-      borderSide: BorderSide(color: Colors.black12, width: 1),
+      borderSide: BorderSide(color: OAppColors.secondaryColor, width: 1),
     ),
     errorBorder: inputBorder.copyWith(
       borderSide: BorderSide(color: OAppColors.error, width: 1),
@@ -31,23 +31,24 @@ class OInputTheme {
     labelStyle: GoogleFonts.poppins().copyWith(
       fontSize: 14,
       fontWeight: FontWeight.w400,
+      color: OAppColors.secondaryColor,
     ),
     hintStyle: GoogleFonts.poppins().copyWith(
       fontSize: 14,
       fontWeight: FontWeight.w400,
+      color: OAppColors.secondaryColor,
     ),
     helperStyle: GoogleFonts.poppins().copyWith(
       fontSize: 14,
       fontWeight: FontWeight.w400,
+      color: OAppColors.secondaryColor,
     ),
     floatingLabelStyle: GoogleFonts.poppins().copyWith(
       fontSize: 14,
       fontWeight: FontWeight.w400,
+      color: OAppColors.secondaryColor,
     ),
   );
-
-
-
 
   static InputDecorationTheme darkInputTheme = InputDecorationTheme(
     errorMaxLines: 3,
@@ -61,7 +62,7 @@ class OInputTheme {
       borderSide: BorderSide(color: OAppColors.secondaryColorDark, width: 1),
     ),
     focusedErrorBorder: inputBorder.copyWith(
-      borderSide: BorderSide(color: Colors.black12, width: 1),
+      borderSide: BorderSide(color: OAppColors.secondaryColorDark, width: 1),
     ),
     errorBorder: inputBorder.copyWith(
       borderSide: BorderSide(color: OAppColors.error, width: 1),
@@ -70,18 +71,22 @@ class OInputTheme {
     labelStyle: GoogleFonts.poppins().copyWith(
       fontSize: 14,
       fontWeight: FontWeight.w400,
+      color: OAppColors.secondaryColorDark,
     ),
     hintStyle: GoogleFonts.poppins().copyWith(
       fontSize: 14,
       fontWeight: FontWeight.w400,
+      color: OAppColors.secondaryColorDark,
     ),
     helperStyle: GoogleFonts.poppins().copyWith(
       fontSize: 14,
       fontWeight: FontWeight.w400,
+      color: OAppColors.secondaryColorDark,
     ),
     floatingLabelStyle: GoogleFonts.poppins().copyWith(
       fontSize: 14,
       fontWeight: FontWeight.w400,
+      color: OAppColors.secondaryColorDark,
     ),
   );
 }
