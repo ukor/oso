@@ -71,7 +71,7 @@ flutter:
   assets:
     - assets/icons/
     - assets/images/
-    - assets/lottieFiles/
+    - assets/lottie_files/
     - assets/configs/
     - assets/fonts/poppins/
 
