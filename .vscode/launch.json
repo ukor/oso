@@ -1,0 +1,52 @@
+{
+  "configurations": [
+    {
+      "name": "dev",
+      "program": "lib/main.dev.dart",
+      "request": "launch",
+      "type": "dart",
+      "toolArgs": [
+        "--dart-define", "MY_VAR=foo",
+        "--flavor development"
+      ],
+      "flutterMode": "debug",
+      "console": "debugConsole"
+    },
+    {
+      "name": "stg",
+      "program": "lib/main.stg.dart",
+      "request": "launch",
+      "type": "dart",
+      "toolArgs": [
+        "--dart-define", "MY_VAR=foo",
+        "--flavor staging"
+      ],
+      "flutterMode": "debug",
+      "console": "debugConsole"
+    },
+    {
+      "name": "prd",
+      "program": "lib/main.prd.dart",
+      "request": "launch",
+      "type": "dart",
+      "toolArgs": [
+        "--dart-define", "MY_VAR=foo",
+        "--flavor production"
+      ],
+      "flutterMode": "debug",
+      "console": "debugConsole"
+    },
+    {
+      "name": "counter_app",
+      "program": "lib/counter_app.dart",
+      "request": "launch",
+      "type": "dart",
+      "toolArgs": [
+        "--dart-define", "MY_VAR=foo",
+        "--flavor development"
+      ],
+      "flutterMode": "debug",
+      "console": "debugConsole"
+    }
+  ]
+}

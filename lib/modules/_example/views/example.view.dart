@@ -9,7 +9,7 @@ class ExampleScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('Love Zone Theme')),
+      appBar: AppBar(title: Text('Oso Theme')),
       body: SafeArea(
         child: SingleChildScrollView(
           padding: EdgeInsets.all(12.0),
