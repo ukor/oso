@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:oso/app/navigation/routes.dart';
+import 'package:oso/commons/extensions/build_context.extension.dart';
 
 class ExampleScreen extends StatelessWidget {
   static final route = AppRoute.fromName(rName: 'example', requiresAuth: false);
@@ -42,13 +43,19 @@ class ExampleScreen extends StatelessWidget {
               ),
               SizedBox(height: 12),
               CheckboxListTile(
-                title: Text('Checked - check box tile'),
+                title: Text(
+                  'Checked - check box tile',
+                  style: context.textTheme.labelLarge,
+                ),
                 value: true,
                 onChanged: (state) {},
               ),
               SizedBox(height: 12),
               CheckboxListTile(
-                title: Text('not check - check box tile'),
+                title: Text(
+                  'not check - check box tile',
+                  style: context.textTheme.labelLarge,
+                ),
                 value: false,
                 onChanged: (state) {},
               ),

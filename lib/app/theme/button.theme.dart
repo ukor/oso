@@ -26,8 +26,8 @@ class OButton {
   static final lightOutlinedButton = OutlinedButtonThemeData(
     style: OutlinedButton.styleFrom(
       elevation: 0,
-      foregroundColor: OAppColors.primaryColor,
-      backgroundColor: OAppColors.secondaryColor,
+      foregroundColor: OAppColors.secondaryColor,
+      backgroundColor: OAppColors.transparent,
       disabledForegroundColor: Colors.grey,
       disabledBackgroundColor: OAppColors.primaryShade4,
       side: BorderSide(color: OAppColors.secondaryColor),
@@ -86,8 +86,8 @@ class OButton {
   static final darkOutlinedButton = OutlinedButtonThemeData(
     style: OutlinedButton.styleFrom(
       elevation: 0,
-      foregroundColor: OAppColors.secondaryColorDark,
-      backgroundColor: OAppColors.primaryColorDark,
+      foregroundColor: OAppColors.secondaryColor,
+      backgroundColor: OAppColors.transparent,
       disabledForegroundColor: Colors.grey,
       disabledBackgroundColor: OAppColors.primaryShade4,
       side: BorderSide(color: OAppColors.secondaryColorDark),

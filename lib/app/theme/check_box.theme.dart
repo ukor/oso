@@ -5,8 +5,19 @@ class OCheckBox {
   OCheckBox._();
 
   static final CheckboxThemeData lightCheckBoxTheme = CheckboxThemeData(
-    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(4)),
-    side: BorderSide(color: OAppColors.secondaryColor, width: 1),
+    shape: RoundedRectangleBorder(
+      borderRadius: BorderRadius.circular(4),
+      side: BorderSide(
+        color: OAppColors.secondaryColor,
+        width: 1,
+        style: BorderStyle.solid,
+      ),
+    ),
+    side: BorderSide(
+      color: OAppColors.secondaryColor,
+      width: 1,
+      style: BorderStyle.solid,
+    ),
     checkColor: WidgetStateProperty.resolveWith((states) {
       if (states.contains(WidgetState.selected)) {
         return OAppColors.secondaryColor;
@@ -22,7 +33,6 @@ class OCheckBox {
       }
     }),
   );
-
 
   static final CheckboxThemeData darkCheckBoxTheme = CheckboxThemeData(
     shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(4)),

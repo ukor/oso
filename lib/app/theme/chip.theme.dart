@@ -7,7 +7,7 @@ class OChipTheme {
 
   static ChipThemeData lightChipTheme = ChipThemeData(
     elevation: 0,
-    showCheckmark: false,
+    showCheckmark: true,
     color: WidgetStateProperty.resolveWith((states) {
       if (states.contains(WidgetState.selected)) {
         return OAppColors.secondaryColor;
@@ -18,13 +18,12 @@ class OChipTheme {
     disabledColor: Colors.grey.withValues(alpha: 0.4),
     labelStyle: GoogleFonts.poppins().copyWith(color: ChipLabelColorLight()),
     backgroundColor: OAppColors.primaryColor,
-    selectedColor: OAppColors.primaryColor,
-    checkmarkColor: OAppColors.secondaryColor,
+    selectedColor: OAppColors.secondaryColor,
+    checkmarkColor: OAppColors.primaryColor,
     padding: EdgeInsets.symmetric(vertical: 12, horizontal: 12),
     shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30)),
     side: ChipSideLight(),
   );
-
 
   ///
   /// Dark theme
@@ -53,12 +52,12 @@ class OChipTheme {
 class ChipLabelColorLight extends Color implements WidgetStateColor {
   const ChipLabelColorLight() : super(_default);
 
-  static const int _default = 0xFF000000;
+  static const int _default = 0xFFffffff;
 
   @override
   Color resolve(Set<WidgetState> states) {
     if (states.contains(WidgetState.selected)) {
-      return OAppColors.secondaryColor; // Selected text color
+      return OAppColors.primaryColor; // Selected text color
     }
     return OAppColors.primaryColor; // normal text color
   }
@@ -92,7 +91,6 @@ class ChipShapeLight extends BorderSide implements WidgetStateProperty {
       side: BorderSide(color: OAppColors.secondaryColor, width: 1),
     );
   }
-
 }
 
 class ChipLabelColorDark extends Color implements WidgetStateColor {
