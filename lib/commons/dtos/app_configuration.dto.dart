@@ -38,8 +38,8 @@ class AppConfiguration {
       name: json['name'],
       appTitle: json['appTitle'],
       endpoint: Endpoint.fromJson(json['endpoint']),
-      zAndroidKey: json['zAndroidKey'],
-      zIOSKey: json['zIOSKey'],
+      zAndroidKey: json['zAndroidKey'] ?? '',
+      zIOSKey: json['zIOSKey'] ?? '',
     );
   }
 
@@ -51,7 +51,7 @@ class AppConfiguration {
           'production',
           'staging',
         ].firstWhereOrNull((item) => item == env) ??
-            'staging';
+        'staging';
 
     // load the json file
     final contents = await rootBundle.loadString(
