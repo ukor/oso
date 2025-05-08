@@ -1,0 +1,27 @@
+{
+  "dart.flutterSdkPath": ".fvm/flutter_sdk",
+  "search.exclude": {
+    "**/.fvm": true
+  },
+  "files.watcherExclude": {
+    "**/.fvm": true
+  },
+  "cSpell.words": [
+    "oso",
+    "daos",
+    "dtos",
+    "firstname",
+
+    "fname",
+
+    "fullname",
+    "geolocator",
+    "lastname",
+
+    "lname",
+    "mobx",
+
+    "signup",
+    "spinkit"
+  ]
+}

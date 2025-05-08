@@ -31,12 +31,54 @@ android {
     }
 
     buildTypes {
+        debug {
+            // signingConfig = signingConfigs.getByName("debug")
+            signingConfig signingConfigs.debug
+        }
         release {
-            // TODO: Add your own signing config for the release build.
-            // Signing with the debug keys for now, so `flutter run --release` works.
-            signingConfig = signingConfigs.getByName("debug")
+            // signingConfig = signingConfigs.getByName("release")
+            signingConfig signingConfigs.release
+            ndk {
+                debugSymbolLevel "FULL"
+                abiFilters "armeabi-v7a", "arm64-v8a", "x86", "x86_64"
+            }
         }
     }
+
+    flavorDimensions "oso"
+    productFlavors {
+        development {
+            dimension "oso"
+            applicationIdSuffix ".dev"
+            resValue "string", "app_name", "Oso Dev"
+            versionNameSuffix ".dev"
+            versionCode flutterVersionCode.toInteger()
+            versionName flutterVersionName
+        }
+        staging {
+            dimension "oso"
+            applicationIdSuffix ".stg"
+            resValue "string", "app_name", "Oso Stg"
+            versionNameSuffix ".stg"
+            versionCode flutterVersionCode.toInteger()
+            versionName flutterVersionName
+            ndk {
+                debugSymbolLevel "FULL"
+                abiFilters "armeabi-v7a", "arm64-v8a", "x86", "x86_64"
+            }
+        }
+        production {
+            dimension "oso"
+            applicationIdSuffix ""
+            resValue "string", "app_name", "Oso"
+            versionNameSuffix ""
+            versionCode flutterVersionCode.toInteger()
+            versionName flutterVersionName
+            ndk {
+                debugSymbolLevel "FULL"
+                abiFilters "armeabi-v7a", "arm64-v8a", "x86", "x86_64"
+            }
+        }
 }
 
 flutter {

@@ -1,13 +1,30 @@
-# Uncomment this line to define a global platform for your project
-# platform :ios, '12.0'
+# if you change the value of the platform ios version
+# Also change the values of IPHONEOS_DEPLOYMENT_TARGET on this file and on runner/build_settings -> Levels -> iOS Deployment Target -> Runner
+# see https://stackoverflow.com/a/75364844/3501729
+platform :ios, '14.0'
+
 
 # CocoaPods analytics sends network stats synchronously affecting flutter build latency.
 ENV['COCOAPODS_DISABLE_STATS'] = 'true'
 
 project 'Runner', {
+  # Debug
   'Debug' => :debug,
+  'Debug-development' => :debug,
+  'Debug-production' => :debug,
+  'Debug-staging' => :debug,
+
+  # Profile
   'Profile' => :release,
+  'Profile-production' => :release,
+  'Profile-staging' => :release,
+  'Profile-development' => :release,
+
+  # Release
   'Release' => :release,
+  'Release-production' => :release,
+  'Release-staging' => :release,
+  'Release-development' => :release,
 }
 
 def flutter_root
@@ -39,5 +56,9 @@ end
 post_install do |installer|
   installer.pods_project.targets.each do |target|
     flutter_additional_ios_build_settings(target)
+    target.build_configurations.each do |config|
+      config.build_settings.delete 'IPHONEOS_DEPLOYMENT_TARGET'
+      config.build_settings['IPHONEOS_DEPLOYMENT_TARGET'] = '14.0'
+    end
   end
 end

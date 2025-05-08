@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:oso/app/service_locators/main.dart';
-
+import 'package:oso/app/theme/theme.dart';
 
 class OsoApp extends StatelessWidget {
   OsoApp({super.key});
@@ -13,8 +13,9 @@ class OsoApp extends StatelessWidget {
     return MaterialApp.router(
       title: 'Oso',
 
-      /// See (https://medium.com/flutter-community/create-a-theme-and-primary-color-switcher-for-your-flutter-app-using-provider-fd334dd7d761)
-      /// See (https://github.com/Roaa94/flutter-theme-switcher)
+      theme: OAppTheme.lightTheme,
+      darkTheme: OAppTheme.darkTheme,
+      themeMode: ThemeMode.light,
       debugShowCheckedModeBanner: false,
       routerConfig: _router,
       builder: (context, widget) {
