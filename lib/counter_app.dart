@@ -15,8 +15,6 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
 
-      /// See (https://medium.com/flutter-community/create-a-theme-and-primary-color-switcher-for-your-flutter-app-using-provider-fd334dd7d761)
-      /// See (https://github.com/Roaa94/flutter-theme-switcher)
       theme: OAppTheme.lightTheme,
       darkTheme: OAppTheme.darkTheme,
       themeMode: ThemeMode.light,
