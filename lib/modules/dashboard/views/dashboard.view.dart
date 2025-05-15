@@ -13,21 +13,25 @@ class DashboardScaffold extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: navigationShell,
-      bottomNavigationBar: NavigationBar(
-        selectedIndex: navigationShell.currentIndex,
-        onDestinationSelected: navigationShell.goBranch,
-        indicatorColor: Theme.of(context).indicatorColor,
-        destinations:
-            dashboardDestination.map((destination) {
-              return NavigationDestination(
-                icon: Icon(destination.icon),
-                label: destination.label,
-                selectedIcon: Icon(
-                  destination.icon,
-                  color: OAppColors.secondaryColor,
-                ),
-              );
-            }).toList(),
+      bottomNavigationBar: BottomNavigationBarTheme(
+        data: Theme.of(context).bottomNavigationBarTheme,
+        child: NavigationBar(
+          selectedIndex: navigationShell.currentIndex,
+          onDestinationSelected: navigationShell.goBranch,
+          indicatorColor: OAppColors.primaryColor,
+          surfaceTintColor: OAppColors.primaryColor,
+          destinations:
+              dashboardDestination.map((destination) {
+                return NavigationDestination(
+                  icon: Icon(destination.icon),
+                  label: destination.label,
+                  selectedIcon: Icon(
+                    destination.icon,
+                    color: OAppColors.secondaryColor,
+                  ),
+                );
+              }).toList(),
+        ),
       ),
     );
   }

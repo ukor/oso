@@ -3,11 +3,11 @@ import 'package:flutter/material.dart';
 class OAppColors {
   OAppColors._();
 
+  OAppColors.fromBrightness(Brightness b) {}
 
   // static final primaryColor = Color(0xff04000A);
   //
   // static final primaryShade1 = Color(0xff303030);
-
 
   static final black = Color(0xff04000A);
 
@@ -27,7 +27,6 @@ class OAppColors {
 
   static final secondaryColorDark = Color.fromRGBO(255, 255, 255, 0.9);
 
-
   static final white = Color.fromRGBO(255, 255, 255, 0.9);
 
   static final transparent = Colors.transparent;
@@ -35,7 +34,6 @@ class OAppColors {
   static final bBubbleRecipient = Color(0xffF2F2F2);
 
   static final darkGrey = Color(0xff787B84);
-
 
   static final error = Colors.redAccent;
 

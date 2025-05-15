@@ -30,10 +30,10 @@ GoRouter router() {
           StatefulShellBranch(
             routes: [
               GoRoute(
-                path: ProfileScreen.route.path,
-                name: ProfileScreen.route.name,
+                path: ProgressScreen.route.path,
+                name: ProgressScreen.route.name,
                 builder: (context, state) {
-                  return ProfileScreen();
+                  return ProgressScreen();
                 },
               ),
             ],
@@ -54,10 +54,10 @@ GoRouter router() {
           StatefulShellBranch(
             routes: [
               GoRoute(
-                path: ProgressScreen.route.path,
-                name: ProgressScreen.route.name,
+                path: ProfileScreen.route.path,
+                name: ProfileScreen.route.name,
                 builder: (context, state) {
-                  return ProgressScreen();
+                  return ProfileScreen();
                 },
               ),
             ],
