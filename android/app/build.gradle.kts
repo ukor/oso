@@ -1,3 +1,10 @@
+// See - https://developer.android.com/build
+// See - https://docs.flutter.dev/deployment/android
+// See - https://codewithandrea.com/articles/flutter-android-gradle-kts/
+
+import java.util.Properties
+import java.io.FileInputStream
+
 plugins {
     id("com.android.application")
     id("kotlin-android")
@@ -5,10 +12,17 @@ plugins {
     id("dev.flutter.flutter-gradle-plugin")
 }
 
+val keystoreProperties = Properties()
+val keystorePropertiesFile = rootProject.file("key.properties")
+if (keystorePropertiesFile.exists()) {
+    keystoreProperties.load(FileInputStream(keystorePropertiesFile))
+}
+
 android {
     namespace = "com.achota.oso"
     compileSdk = flutter.compileSdkVersion
-    ndkVersion = flutter.ndkVersion
+    // ndkVersion = flutter.ndkVersion
+    ndkVersion = "27.0.12077973"
 
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_11
@@ -17,6 +31,15 @@ android {
 
     kotlinOptions {
         jvmTarget = JavaVersion.VERSION_11.toString()
+    }
+
+    signingConfigs {
+        create("release") {
+            keyAlias = keystoreProperties["keyAlias"] as String
+            keyPassword = keystoreProperties["keyPassword"] as String
+            storeFile = keystoreProperties["storeFile"]?.let { file(it) }
+            storePassword = keystoreProperties["storePassword"] as String
+        }
     }
 
     defaultConfig {
@@ -32,53 +55,54 @@ android {
 
     buildTypes {
         debug {
-            // signingConfig = signingConfigs.getByName("debug")
-            signingConfig signingConfigs.debug
+            signingConfig = signingConfigs.getByName("debug")
+            // signingConfig signingConfigs.debug
         }
         release {
-            // signingConfig = signingConfigs.getByName("release")
-            signingConfig signingConfigs.release
+            signingConfig = signingConfigs.getByName("release")
+            // signingConfig signingConfigs.release
             ndk {
-                debugSymbolLevel "FULL"
-                abiFilters "armeabi-v7a", "arm64-v8a", "x86", "x86_64"
+                debugSymbolLevel = "FULL"
+                abiFilters += listOf("armeabi-v7a", "arm64-v8a", "x86", "x86_64")
             }
         }
     }
 
-    flavorDimensions "oso"
+    flavorDimensions += "oso"
     productFlavors {
-        development {
-            dimension "oso"
-            applicationIdSuffix ".dev"
-            resValue "string", "app_name", "Oso Dev"
-            versionNameSuffix ".dev"
-            versionCode flutterVersionCode.toInteger()
-            versionName flutterVersionName
+        create("development") {
+            dimension = "oso"
+            applicationIdSuffix = ".dev"
+            resValue(type = "string", name = "app_name", value = "Oso dev")
+            versionNameSuffix = ".dev"
+            versionCode = flutter.versionCode
+            versionName = flutter.versionName
         }
-        staging {
-            dimension "oso"
-            applicationIdSuffix ".stg"
-            resValue "string", "app_name", "Oso Stg"
-            versionNameSuffix ".stg"
-            versionCode flutterVersionCode.toInteger()
-            versionName flutterVersionName
+        create("staging") {
+            dimension = "oso"
+            applicationIdSuffix = ".stg"
+            resValue(type = "string", name = "app_name", value = "Oso stg")
+            versionNameSuffix = ".stg"
+            versionCode = flutter.versionCode
+            versionName = flutter.versionName
             ndk {
-                debugSymbolLevel "FULL"
-                abiFilters "armeabi-v7a", "arm64-v8a", "x86", "x86_64"
+                debugSymbolLevel = "FULL"
+                abiFilters += listOf("armeabi-v7a", "arm64-v8a", "x86", "x86_64")
             }
         }
-        production {
-            dimension "oso"
-            applicationIdSuffix ""
-            resValue "string", "app_name", "Oso"
-            versionNameSuffix ""
-            versionCode flutterVersionCode.toInteger()
-            versionName flutterVersionName
+        create("production") {
+            dimension = "oso"
+            applicationIdSuffix = ""
+            resValue(type = "string", name = "app_name", value = "Oso")
+            versionNameSuffix = ""
+            versionCode = flutter.versionCode
+            versionName = flutter.versionName
             ndk {
-                debugSymbolLevel "FULL"
-                abiFilters "armeabi-v7a", "arm64-v8a", "x86", "x86_64"
+                debugSymbolLevel = "FULL"
+                abiFilters += listOf("armeabi-v7a", "arm64-v8a", "x86", "x86_64")
             }
         }
+    }
 }
 
 flutter {

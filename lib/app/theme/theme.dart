@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:oso/app/theme/app_bar.theme.dart';
+import 'package:oso/app/theme/bottom_navigation.theme.dart';
 import 'package:oso/app/theme/bottom_sheet.theme.dart';
 import 'package:oso/app/theme/button.theme.dart';
 import 'package:oso/app/theme/check_box.theme.dart';
@@ -20,21 +21,36 @@ class OAppTheme {
     brightness: Brightness.light,
 
     // primaryColor: OAppColors.primaryColor,
+    // colorScheme: ColorScheme.fromSeed(
+    //   seedColor: OAppColors.primaryColor,
+    //   brightness: Brightness.light,
+    // ),
     colorScheme: ColorScheme(
       brightness: Brightness.light,
+
       primary: OAppColors.primaryColor,
+      primaryContainer: OAppColors.secondaryColor, // same as surface
       onPrimary: OAppColors.secondaryColor,
       secondary: OAppColors.secondaryColor,
       onSecondary: OAppColors.primaryColor,
       error: OAppColors.error,
       onError: OAppColors.white,
+
       surface: OAppColors.secondaryColor,
+      surfaceContainer: OAppColors.secondaryColor, // same as surface
       onSurface: OAppColors.primaryColor,
+
+      surfaceContainerHigh: Colors.blueAccent,
+      surfaceContainerLow: Colors.redAccent,
+      surfaceTint: Colors.redAccent,
+      surfaceDim: Colors.redAccent,
+
+      tertiary: Colors.blueAccent,
+      onTertiary: OAppColors.primaryColor,
     ),
     scaffoldBackgroundColor: OAppColors.primaryColor,
-    bottomNavigationBarTheme: BottomNavigationBarThemeData(
-      backgroundColor: OAppColors.primaryShade4,
-    ),
+    bottomNavigationBarTheme:
+        OBottomNavigationBar.lightBottomNavigationBarTheme,
     textTheme: OTextTheme.lightTextTheme,
     inputDecorationTheme: OInputTheme.lightInputTheme,
     elevatedButtonTheme: OButton.lightElevatedButton,
@@ -58,6 +74,8 @@ class OAppTheme {
       seedColor: OAppColors.primaryColorDark,
       brightness: Brightness.dark,
     ),
+    scaffoldBackgroundColor: OAppColors.primaryColorDark,
+    bottomNavigationBarTheme: OBottomNavigationBar.darkBottomNavigationBarTheme,
     textTheme: OTextTheme.darkTextTheme,
     inputDecorationTheme: OInputTheme.darkInputTheme,
     elevatedButtonTheme: OButton.lightElevatedButton,

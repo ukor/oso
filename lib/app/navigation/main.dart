@@ -2,13 +2,17 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:logger/logger.dart';
 import 'package:oso/modules/_example/views/example.view.dart';
+import 'package:oso/modules/activity/views/activity.view.dart';
+import 'package:oso/modules/dashboard/views/dashboard.view.dart';
+import 'package:oso/modules/profile/views/profile.view.dart';
+import 'package:oso/modules/progress/views/progress.view.dart';
 
 final log = Logger();
 
 GoRouter router() {
   return GoRouter(
     debugLogDiagnostics: true,
-    initialLocation: ExampleScreen.route.path,
+    initialLocation: ActivityScreen.route.path,
     observers: [],
     redirect: (BuildContext context, GoRouterState state) async {
       log.d(
@@ -18,6 +22,48 @@ GoRouter router() {
       return null;
     },
     routes: [
+      StatefulShellRoute.indexedStack(
+        builder: (context, state, StatefulNavigationShell navigationShell) {
+          return DashboardScaffold(navigationShell: navigationShell);
+        },
+        branches: [
+          StatefulShellBranch(
+            routes: [
+              GoRoute(
+                path: ProgressScreen.route.path,
+                name: ProgressScreen.route.name,
+                builder: (context, state) {
+                  return ProgressScreen();
+                },
+              ),
+            ],
+          ),
+
+          StatefulShellBranch(
+            routes: [
+              GoRoute(
+                path: ActivityScreen.route.path,
+                name: ActivityScreen.route.name,
+                builder: (context, state) {
+                  return ActivityScreen();
+                },
+              ),
+            ],
+          ),
+
+          StatefulShellBranch(
+            routes: [
+              GoRoute(
+                path: ProfileScreen.route.path,
+                name: ProfileScreen.route.name,
+                builder: (context, state) {
+                  return ProfileScreen();
+                },
+              ),
+            ],
+          ),
+        ],
+      ),
       GoRoute(
         path: ExampleScreen.route.path,
         name: ExampleScreen.route.name,
