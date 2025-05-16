@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:oso/app/navigation/routes.dart';
-import 'package:oso/commons/extensions/build_context.extension.dart';
 
 class ProgressScreen extends StatelessWidget {
   static final route = AppRoute.fromName(
