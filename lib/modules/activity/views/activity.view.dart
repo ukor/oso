@@ -1,14 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:oso/app/navigation/routes.dart';
-import 'package:oso/commons/extensions/build_context.extension.dart';
+import 'package:oso/modules/activity/stores/activity.state.dart';
 
-class ActivityScreen extends StatelessWidget {
+class ActivityScreen extends StatefulWidget {
   static final route = AppRoute.fromName(
     rName: 'activity',
     requiresAuth: false,
   );
 
   const ActivityScreen({super.key});
+
+  @override
+  State<ActivityScreen> createState() => _ActivityScreenState();
+}
+
+class _ActivityScreenState extends State<ActivityScreen> {
+  final _state = ActivityState();
 
   @override
   Widget build(BuildContext context) {

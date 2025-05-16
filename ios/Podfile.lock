@@ -9,6 +9,9 @@ PODS:
     - Flutter
   - flutter_secure_storage (6.0.0):
     - Flutter
+  - geolocator_apple (1.2.0):
+    - Flutter
+    - FlutterMacOS
   - objective_c (0.0.1):
     - Flutter
   - path_provider_foundation (0.0.1):
@@ -51,6 +54,7 @@ DEPENDENCIES:
   - Flutter (from `Flutter`)
   - flutter_native_splash (from `.symlinks/plugins/flutter_native_splash/ios`)
   - flutter_secure_storage (from `.symlinks/plugins/flutter_secure_storage/ios`)
+  - geolocator_apple (from `.symlinks/plugins/geolocator_apple/darwin`)
   - objective_c (from `.symlinks/plugins/objective_c/ios`)
   - path_provider_foundation (from `.symlinks/plugins/path_provider_foundation/darwin`)
   - permission_handler_apple (from `.symlinks/plugins/permission_handler_apple/ios`)
@@ -73,6 +77,8 @@ EXTERNAL SOURCES:
     :path: ".symlinks/plugins/flutter_native_splash/ios"
   flutter_secure_storage:
     :path: ".symlinks/plugins/flutter_secure_storage/ios"
+  geolocator_apple:
+    :path: ".symlinks/plugins/geolocator_apple/darwin"
   objective_c:
     :path: ".symlinks/plugins/objective_c/ios"
   path_provider_foundation:
@@ -92,6 +98,7 @@ SPEC CHECKSUMS:
   Flutter: e0871f40cf51350855a761d2e70bf5af5b9b5de7
   flutter_native_splash: df59bb2e1421aa0282cb2e95618af4dcb0c56c29
   flutter_secure_storage: d33dac7ae2ea08509be337e775f6b59f1ff45f12
+  geolocator_apple: 66b711889fd333205763b83c9dcf0a57a28c7afd
   objective_c: 77e887b5ba1827970907e10e832eec1683f3431d
   path_provider_foundation: 2b6b4c569c0fb62ec74538f866245ac84301af46
   permission_handler_apple: 9878588469a2b0d0fc1e048d9f43605f92e6cec2
@@ -100,6 +107,6 @@ SPEC CHECKSUMS:
   sqlite3: fc1400008a9b3525f5914ed715a5d1af0b8f4983
   sqlite3_flutter_libs: 487032b9008b28de37c72a3aa66849ef3745f3e6
 
-PODFILE CHECKSUM: 778220b7815a3fec67c2f9b96a9dff2b03a9dccc
+PODFILE CHECKSUM: 6b67e994eeb2c6f4687c925bba9e460124ee9e0f
 
 COCOAPODS: 1.16.2
