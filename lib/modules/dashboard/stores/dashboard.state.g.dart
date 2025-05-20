@@ -42,6 +42,17 @@ mixin _$DashboardState on DashboardBaseState, Store {
   }
 
   @override
+  dynamic dispose() {
+    final _$actionInfo = _$DashboardBaseStateActionController.startAction(
+        name: 'DashboardBaseState.dispose');
+    try {
+      return super.dispose();
+    } finally {
+      _$DashboardBaseStateActionController.endAction(_$actionInfo);
+    }
+  }
+
+  @override
   String toString() {
     return '''
 
