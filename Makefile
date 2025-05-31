@@ -34,17 +34,17 @@ clean-build:
 	rm -rf ./build
 
 build-android:
-	.fvm/flutter_sdk/bin/flutter build appbundle --flavor production -t ./lib/main_prd.dart --release --obfuscate --split-debug-info=./
+	.fvm/flutter_sdk/bin/flutter build appbundle --flavor production -t ./lib/main.prd.dart --release --obfuscate --split-debug-info=./
 build-ios:
-	.fvm/flutter_sdk/bin/flutter build ipa --flavor production -t ./lib/main_prd.dart --release --obfuscate --split-debug-info=./ --export-method=app-store
+	.fvm/flutter_sdk/bin/flutter build ipa --flavor production -t ./lib/main.prd.dart --release --obfuscate --split-debug-info=./ --export-method=app-store
 build-stg-ios:
-	.fvm/flutter_sdk/bin/flutter build ipa --flavor staging -t ./lib/main_stg.dart --release --obfuscate --split-debug-info=./ --export-method=app-store
+	.fvm/flutter_sdk/bin/flutter build ipa --flavor staging -t ./lib/main.stg.dart --release --obfuscate --split-debug-info=./ --export-method=app-store
 
 build-dev-android:
-	.fvm/flutter_sdk/bin/flutter build apk --flavor development -t ./lib/main_dev.dart --release --obfuscate --split-debug-info=./
+	.fvm/flutter_sdk/bin/flutter build apk --flavor development -t ./lib/main.dev.dart --release --obfuscate --split-debug-info=./
 
 build-stg-android:
-	.fvm/flutter_sdk/bin/flutter build apk --flavor staging -t ./lib/main_stg.dart --release --obfuscate --split-debug-info=./
+	.fvm/flutter_sdk/bin/flutter build apk --flavor staging -t ./lib/main.stg.dart --release --obfuscate --split-debug-info=./
 
 run-dev-chrome:
 	.fvm/flutter_sdk/bin/flutter run -d chrome --target=lib/main.dev.dart --web-browser-flag "--new-window=false"
