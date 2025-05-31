@@ -181,7 +181,10 @@ class _ActivityScreenState extends State<ActivityScreen> {
                 child: SizedBox(
                   height: 50,
                   width: 250,
-                  child: ElevatedButton(onPressed: () {}, child: Text('Start')),
+                  child: ElevatedButton(
+                    onPressed: _state.onStart,
+                    child: Text('Start'),
+                  ),
                 ),
               ),
             ],

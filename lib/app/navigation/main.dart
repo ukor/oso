@@ -3,6 +3,8 @@ import 'package:go_router/go_router.dart';
 import 'package:logger/logger.dart';
 import 'package:oso/modules/_example/views/example.view.dart';
 import 'package:oso/modules/activity/views/activity.view.dart';
+import 'package:oso/modules/activity/views/ongoing_activity.view.dart';
+import 'package:oso/modules/activity/views/start_activity.view.dart';
 import 'package:oso/modules/dashboard/views/dashboard.view.dart';
 import 'package:oso/modules/profile/views/profile.view.dart';
 import 'package:oso/modules/progress/views/progress.view.dart';
@@ -63,6 +65,21 @@ GoRouter router() {
             ],
           ),
         ],
+      ),
+      GoRoute(
+        path: StartActivityScreen.route.path,
+        name: StartActivityScreen.route.name,
+        builder: (context, state) {
+          return const StartActivityScreen();
+        },
+      ),
+      // OngoingActivity
+      GoRoute(
+        path: OngoingActivityScreen.route.path,
+        name: OngoingActivityScreen.route.name,
+        builder: (context, state) {
+          return const OngoingActivityScreen();
+        },
       ),
       GoRoute(
         path: ExampleScreen.route.path,

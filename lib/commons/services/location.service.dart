@@ -51,10 +51,7 @@ class LocationService {
   Future<Position?> getLocation() async {
     try {
       Position position = await Geolocator.getCurrentPosition(
-        // desiredAccuracy: LocationAccuracy.high,
-        desiredAccuracy: LocationAccuracy.bestForNavigation,
-        forceAndroidLocationManager: true,
-        timeLimit: const Duration(seconds: 10),
+        locationSettings: _locationSettings(),
       );
 
       return position;
