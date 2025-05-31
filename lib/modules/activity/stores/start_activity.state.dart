@@ -31,7 +31,7 @@ abstract class ActivityBaseState with Store {
         _streamController.sink.add(0);
         _streamController.close(); // Close the stream
         _timer.cancel();
-
+        Future.delayed(Duration(milliseconds: 150), () {});
         _router.go(OngoingActivityScreen.route.path);
       } else {
         _streamController.sink.add(countdownFrom);
