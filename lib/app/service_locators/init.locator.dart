@@ -1,3 +1,4 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
 import 'package:go_router/go_router.dart';
@@ -9,7 +10,7 @@ import 'main.dart';
 
 Future<void> initLocator({
   required ENVIRONMENTS environment,
-  // required FirebaseApp firebaseApp,
+  required FirebaseApp firebaseApp,
 }) async {
   // if (environment != ENVIRONMENTS.production) {
   //   // Only call clearSavedSettings() during testing to reset internal values.

@@ -64,14 +64,14 @@ generate-splash-screens:
 
 firebase-dev:
 	dart pub global activate flutterfire_cli
-	flutterfire configure --project=sal-love-zone --out=lib/firebase_configs/dev_firebase_options.dart --android-package-name=com.saltechapps.loveZone.dev --ios-bundle-id=com.saltechapps.loveZone.dev
+	flutterfire configure --project=oso-achota --out=lib/app/firebase_configs/dev_firebase_options.dart --ios-out=ios/configs/development/GoogleService-Info.plist --android-out=android/app/src/development/google-services.json --android-package-name=com.achota.oso.dev --ios-bundle-id=com.achota.oso.dev
 
 firebase-stg:
 	dart pub global activate flutterfire_cli
-	flutterfire configure --project=sal-love-zone --out=lib/firebase_configs/stg_firebase_options.dart --android-package-name=com.saltechapps.loveZone.stg --ios-bundle-id=com.saltechapps.loveZone.stg
+	flutterfire configure --project=oso-achota --out=lib/app/firebase_configs/stg_firebase_options.dart --ios-out=ios/configs/staging/GoogleService-Info.plist --android-out=android/app/src/staging/google-services.json --android-package-name=com.achota.oso.stg --ios-bundle-id=com.achota.oso.stg
 
 firebase-prd:
 	dart pub global activate flutterfire_cli
-	flutterfire configure --project=sal-love-zone --out=lib/firebase_configs/prd_firebase_options.dart --android-package-name=com.saltechapps.loveZone --ios-bundle-id=com.saltechapps.loveZone
+	flutterfire configure --project=oso-achota --out=lib/app/firebase_configs/prd_firebase_options.dart --ios-out=ios/configs/production/GoogleService-Info.plist --android-out=android/app/src/production/google-services.json --android-package-name=com.achota.oso --ios-bundle-id=com.achota.oso
 
 firebase: firebase-dev firebase-stg firebase-prd
