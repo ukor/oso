@@ -20,7 +20,7 @@ class RemoteConfiguration {
       await remoteConfigInstance.fetchAndActivate();
     } catch (e) {
       debugPrint('Error fetching remote config: $e');
-      // Handle error appropriately, e.g., log to crashlytics, use default values
+      // Handle error appropriately, e.g., log to crashlytics
     }
 
     return RemoteConfiguration._(remoteConfigInstance);

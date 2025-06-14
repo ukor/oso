@@ -6,6 +6,7 @@ import 'package:go_router/go_router.dart';
 import 'package:oso/app/navigation/main.dart';
 import 'package:oso/commons/database/app.database.dart';
 import 'package:oso/commons/dtos/app_configuration.dto.dart';
+import 'package:oso/commons/services/crash_log.service.dart';
 import 'package:oso/commons/services/remote_configuration.service.dart';
 
 import 'main.dart';
@@ -32,9 +33,13 @@ Future<void> initLocator({
     yield LicenseEntryWithLineBreaks(['google_fonts'], license);
   });
 
+  ioc.registerSingletonAsync(() => CrashLog.initialize());
+  await ioc.isReady<CrashLog>();
+
   ioc.registerSingletonAsync<RemoteConfiguration>(
-    () => RemoteConfiguration.initialize(),
+    () async => RemoteConfiguration.initialize(),
   );
+  await ioc.isReady<RemoteConfiguration>();
 
   ioc.registerSingleton<OsoDatabase>(
     OsoDatabase(environment: environment.name),

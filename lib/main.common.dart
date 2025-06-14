@@ -25,14 +25,5 @@ Future<void> mainCommon({
 
   runApp(OsoApp());
 
-  FlutterError.onError = (errorDetails) {
-    log.f(errorDetails);
-    // FirebaseCrashlytics.instance.recordFlutterFatalError(errorDetails);
-  };
-
-  PlatformDispatcher.instance.onError = (error, stack) {
-    log.f(error, stackTrace: stack);
-    // FirebaseCrashlytics.instance.recordError(error, stack, fatal: true);
-    return true;
-  };
+  log.i('App starting');
 }
