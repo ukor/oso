@@ -20,7 +20,7 @@ abstract class ActivityBaseState with Store {
     _message = 'Activity message';
   }
 
-  int countdownFrom = 30;
+  int countdownFrom = 3;
 
   ActivityBaseState() {
     _streamController = StreamController<int>();

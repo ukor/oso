@@ -23,9 +23,9 @@ class LocationService {
     if (Platform.isAndroid) {
       return AndroidSettings(
         accuracy: LocationAccuracy.high,
-        distanceFilter: 100,
+        // distanceFilter: 100,
         forceLocationManager: true,
-        intervalDuration: const Duration(minutes: 5),
+        intervalDuration: const Duration(seconds: 5),
         //(Optional) Set foreground notification config to keep the app alive
         //when going to the background
         foregroundNotificationConfig: const ForegroundNotificationConfig(
@@ -40,7 +40,7 @@ class LocationService {
     return AppleSettings(
       accuracy: LocationAccuracy.high,
       activityType: ActivityType.fitness,
-      distanceFilter: 100,
+      // distanceFilter: 100,
       pauseLocationUpdatesAutomatically: false,
       // Only set to true if our app will be started up in the background.
       showBackgroundLocationIndicator: true,

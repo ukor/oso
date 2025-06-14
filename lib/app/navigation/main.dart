@@ -6,6 +6,7 @@ import 'package:oso/modules/activity/views/activity.view.dart';
 import 'package:oso/modules/activity/views/ongoing_activity.view.dart';
 import 'package:oso/modules/activity/views/start_activity.view.dart';
 import 'package:oso/modules/dashboard/views/dashboard.view.dart';
+import 'package:oso/modules/playground/views/fill_btn_v2.view.dart';
 import 'package:oso/modules/profile/views/profile.view.dart';
 import 'package:oso/modules/progress/views/progress.view.dart';
 

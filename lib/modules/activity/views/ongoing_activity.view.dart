@@ -136,6 +136,28 @@ class _OngoingActivityScreenState extends State<OngoingActivityScreen> {
                   ),
 
                   SizedBox(height: context.heightWithPercent(15)),
+                  Text(_state.coordinate),
+
+                  SizedBox(
+                    height: 46,
+                    child: ListView.separated(
+                      itemBuilder: (context, index) {
+                        final item = _state.positions[index];
+                        return Observer(
+                          builder: (context) {
+                            return ListTile(
+                              leading: Icon(CupertinoIcons.location_solid),
+                              subtitle: Text(item.toString()),
+                            );
+                          },
+                        );
+                      },
+                      separatorBuilder: (context, index) {
+                        return Divider(height: 1, thickness: 1);
+                      },
+                      itemCount: _state.positions.length,
+                    ),
+                  ),
                 ],
               ),
             ),
