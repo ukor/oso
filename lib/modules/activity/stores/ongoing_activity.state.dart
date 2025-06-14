@@ -1,8 +1,11 @@
 import 'dart:async';
 
+import 'package:geolocator/geolocator.dart';
 import 'package:go_router/go_router.dart';
+import 'package:logger/logger.dart';
 import 'package:mobx/mobx.dart';
 import 'package:oso/app/service_locators/main.dart';
+import 'package:oso/commons/dtos/coordinate.dto.dart';
 import 'package:oso/commons/services/location.service.dart';
 import 'package:oso/modules/activity/views/activity.view.dart';
 
@@ -13,6 +16,8 @@ class OngoingActivityState = OngoingActivityBaseState
 
 abstract class OngoingActivityBaseState with Store {
   final _router = locator.get<GoRouter>();
+
+  final _log = Logger();
 
   final _locationService = locator.get<LocationService>();
 
@@ -40,6 +45,12 @@ abstract class OngoingActivityBaseState with Store {
   @readonly
   double _distance = 0.00;
 
+  @readonly
+  ObservableList<CoordinateDto> _positions = ObservableList.of([]);
+
+  @readonly
+  String _coordinate = '';
+
   @action
   init() {
     _message = 'Activity message';
@@ -59,11 +70,27 @@ abstract class OngoingActivityBaseState with Store {
       }
     });
 
-    _locationService.getLocationContinuously().listen((position) {
-      _pace = position.speed;
+    _locationService
+        .getLocationContinuously()
+        .listen((position) {
+          _log.i(position);
+          _pace = position.speed;
 
-      _distance = position.altitude;
-    });
+          _distance = position.altitude;
+
+          _coordinate =
+              'longitude: ${position.longitude} latitude: ${position.latitude}';
+
+          _positions.add(
+            CoordinateDto(
+              longitude: position.longitude,
+              latitude: position.latitude,
+            ),
+          );
+        })
+        .onError((error) {
+          _log.f(error);
+        });
   }
 
   late final Timer _timer;

@@ -153,6 +153,42 @@ mixin _$OngoingActivityState on OngoingActivityBaseState, Store {
     });
   }
 
+  late final _$_positionsAtom =
+      Atom(name: 'OngoingActivityBaseState._positions', context: context);
+
+  ObservableList<CoordinateDto> get positions {
+    _$_positionsAtom.reportRead();
+    return super._positions;
+  }
+
+  @override
+  ObservableList<CoordinateDto> get _positions => positions;
+
+  @override
+  set _positions(ObservableList<CoordinateDto> value) {
+    _$_positionsAtom.reportWrite(value, super._positions, () {
+      super._positions = value;
+    });
+  }
+
+  late final _$_coordinateAtom =
+      Atom(name: 'OngoingActivityBaseState._coordinate', context: context);
+
+  String get coordinate {
+    _$_coordinateAtom.reportRead();
+    return super._coordinate;
+  }
+
+  @override
+  String get _coordinate => coordinate;
+
+  @override
+  set _coordinate(String value) {
+    _$_coordinateAtom.reportWrite(value, super._coordinate, () {
+      super._coordinate = value;
+    });
+  }
+
   late final _$OngoingActivityBaseStateActionController =
       ActionController(name: 'OngoingActivityBaseState', context: context);
 

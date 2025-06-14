@@ -1,5 +1,6 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:logger/logger.dart';
 import 'package:oso/app/app.dart';
 import 'package:oso/app/service_locators/init.locator.dart';
@@ -12,6 +13,7 @@ Future<void> mainCommon({
   required ENVIRONMENTS environment,
   required FirebaseApp firebaseApp,
 }) async {
+  await SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
   final log = Logger();
 
   await initLocator(environment: environment, firebaseApp: firebaseApp);
