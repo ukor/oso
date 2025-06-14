@@ -1,3 +1,4 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:logger/logger.dart';
@@ -10,11 +11,11 @@ import 'commons/dtos/app_configuration.dto.dart';
 
 Future<void> mainCommon({
   required ENVIRONMENTS environment,
-  // required FirebaseApp firebaseApp,
+  required FirebaseApp firebaseApp,
 }) async {
   final log = Logger();
 
-  await initLocator(environment: environment);
+  await initLocator(environment: environment, firebaseApp: firebaseApp);
   await registerServices();
 
   /// Should always come after registering services with GetIt
@@ -24,14 +25,5 @@ Future<void> mainCommon({
 
   runApp(OsoApp());
 
-  FlutterError.onError = (errorDetails) {
-    log.f(errorDetails);
-    // FirebaseCrashlytics.instance.recordFlutterFatalError(errorDetails);
-  };
-
-  PlatformDispatcher.instance.onError = (error, stack) {
-    log.f(error, stackTrace: stack);
-    // FirebaseCrashlytics.instance.recordError(error, stack, fatal: true);
-    return true;
-  };
+  log.i('App starting');
 }

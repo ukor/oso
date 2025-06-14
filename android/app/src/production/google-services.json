@@ -1,0 +1,67 @@
+{
+  "project_info": {
+    "project_number": "991281088139",
+    "project_id": "oso-achota",
+    "storage_bucket": "oso-achota.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:991281088139:android:18191794d785e94033b68e",
+        "android_client_info": {
+          "package_name": "com.achota.oso"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCk2zJR8tnIZETFAQYUuYX63nq-yRFUVXk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:991281088139:android:03984366a09a03ed33b68e",
+        "android_client_info": {
+          "package_name": "com.achota.oso.dev"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCk2zJR8tnIZETFAQYUuYX63nq-yRFUVXk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:991281088139:android:abc507c7a074a42033b68e",
+        "android_client_info": {
+          "package_name": "com.achota.oso.stg"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCk2zJR8tnIZETFAQYUuYX63nq-yRFUVXk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
